@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+
+    <style>
+    .area{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+
+        .div2{
+            display: inline-block;
+        }
+
+        .inputColor{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            width: 100px;
+        }
+
+
+        .box{
+            display: inline-block;
+        }
+        
+        .box > div{
+            transition-duration: 1s;
+        }
+       
+
+    </style>
+</head>
+<body>
+    <div class="area" id="box1"></div>
+    <input type="text" class="inputColor" id="input1"><br>
+    <button type="button" id="btn1">색 변경</button>
+
+    <script>
+     //입력값에 색깔이름을 넣고
+     // 버튼을 누르면
+     // 박스가 바뀜
+     $("#btn1").on("click", () => {
+        $("#box1").css("backgroundColor", $("#input1").val());
+
+     });
+    </script>
+
+    <hr>
+
+    <div class="area div2"></div>
+    <div class="area div2"></div>
+    <div class="area div2"></div>
+    <div class="area div2"></div>
+    <div class="area div2"></div>
+    <div class="area div2"></div>
+    <div>
+        <input type="text" class="inputColor input2">
+        <input type="text" class="inputColor input2">
+        <input type="text" class="inputColor input2">
+        <input type="text" class="inputColor input2">
+        <input type="text" class="inputColor input2">
+        <input type="text" class="inputColor input2">
+    </div>
+    <button type="button" id="btn2">색변경</button>
+
+    <hr>
+    
+    <script>
+        $("btn2").on("click", ()=>{
+            
+            const box = $(".div2");
+            const inbox = $(".input2");
+            box[0]
+            for(let i =0; i<box.length; i++) {
+                $(box[i]).css( "backgroundColor", $(inbox[i]).val() )
+            }
+        });
+    </script>
+
+    <div class="box">
+        <div class="area div3"></div>
+        <input type="text" class="inputColor input3">
+    </div>
+    <div class="box">
+        <div class="area div3"></div>
+        <input type="text" class="inputColor input3">
+    </div>
+    <div class="box">
+        <div class="area div3"></div>
+        <input type="text" class="inputColor input3">
+    </div>
+    <div class="box">
+        <div class="area div3"></div>
+        <input type="text" class="inputColor input3">
+    </div>
+    <div class="box">
+        <div class="area div3"></div>
+        <input type="text" class="inputColor input3">
+    </div>
+    <div class="box">
+        <div class="area div3"></div>
+        <input type="text" class="inputColor input3">
+    </div>
+
+    <script>
+        //인풋창에 색깔을 입력하면 박스색이 변해요
+
+        $(".input3").on("input", ()=> {
+            $(".div3").css("backgroundColor", $("#input3").val() );
+        });
+    
+    </script>
+
+
+
+</body>
+</html>
